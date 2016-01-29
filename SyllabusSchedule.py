@@ -36,6 +36,7 @@ class SyllabusSchedule:
         self.__final_schedule = []
         week_num = 1 
         week_start = self.start
+        lab_num = 1
 
         if week_start.weekday() is not 0:
             week_start = self.start + timedelta(days=0-self.start.weekday())
@@ -66,7 +67,6 @@ class SyllabusSchedule:
                     'Topic': task['Topic']})
 
                 # Labs are displayed as its own row for the available week
-                lab_num = 1
                 for lab in task['Labs']:
                     due_date = week_start + timedelta(days=(self.day + lab['Days'] ))
 
